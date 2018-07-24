@@ -1,0 +1,16 @@
+{
+    "name": "NgRok",
+    "version": "1.0",
+    "slug": "ngrok",
+    "description": "Addon to run NgRok and tunnel hass.io over public http domain",
+    "startup": "before",
+    "boot": "auto",
+    "options": {
+        "host": "192.168.1.1:8123"
+    },
+    "schema": {
+        "host": "str",
+        "subdomain": "str?",
+        "authtoken": "str?"
+    }
+}
