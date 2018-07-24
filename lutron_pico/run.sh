@@ -11,6 +11,4 @@ PWD="$(jq --raw-output '.password' $CONFIG_PATH)"
 echo "Password: $PWD"
 echo "API password: $HASSIO_TOKEN"
 echo 'Starting service...'
-curl -X GET -H "x-ha-access: $HASSIO_TOKEN" -H "Content-Type: application/json" http://hassio/homeassistant/api/
-curl -X POST -H "x-ha-access: $HASSIO_TOKEN" -H "Content-Type: application/json" http://hassio/homeassistant/api/events/lutron_button_pressed
 python3 /lutron_pico.py --host $HOST --port $PORT --user $USER --pwd $PWD --apipwd $HASSIO_TOKEN
