@@ -10,7 +10,5 @@ echo "Username: $USER"
 PWD="$(jq --raw-output '.password' $CONFIG_PATH)"
 echo "Password: $PWD"
 echo "API password: $HASSIO_TOKEN"
-echo 'Starting telnet connection...'
-spawn telnet -a $USER $HOST $PORT
-
-#python3 /lutron_pico.py --host $HOST --port $PORT --user $USER --pwd $PWD --apipwd $HASSIO_TOKEN
+echo 'Starting service...'
+python3 /lutron_pico.py --host $HOST --port $PORT --user $USER --pwd $PWD --apipwd $HASSIO_TOKEN
