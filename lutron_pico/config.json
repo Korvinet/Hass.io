@@ -8,6 +8,12 @@
     "hassio_api": true,
     "homeassistant_api": true,
     "host_network": true,
-    "options": {},
-    "schema": {}
+    "options": {
+        "host": "192.168.1.1",
+        "port": 23
+    },
+    "schema": {
+        "host": "str",
+        "port": "int"
+    }
   }
