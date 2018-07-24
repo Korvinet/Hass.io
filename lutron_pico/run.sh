@@ -1,4 +1,4 @@
-echo 'Build version: 1.0.10'
+echo 'Build version: 1.0.11'
 echo 'Configuring plugin...'
 CONFIG_PATH=/data/options.json
 HOST="$(jq --raw-output '.host' $CONFIG_PATH)"
@@ -10,5 +10,8 @@ echo "Username: $USER"
 PWD="$(jq --raw-output '.password' $CONFIG_PATH)"
 echo "Password: $PWD"
 echo "API password: $HASSIO_TOKEN"
-echo 'Starting service...'
+echo 'Starting telnet connection...'
+
+telnet $HOST $PORT
+
 python3 /lutron_pico.py --host $HOST --port $PORT --user $USER --pwd $PWD --apipwd $HASSIO_TOKEN
