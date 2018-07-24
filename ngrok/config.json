@@ -2,7 +2,7 @@
     "name": "NgRok",
     "version": "1.0",
     "slug": "ngrok",
-    "description": "Addon to run NgRok and tunnel hass.io over public http domain",
+    "description": "Addon to run NgRok and tunnel hass.io over public http domain.",
     "startup": "before",
     "boot": "auto",
     "host_network": true,

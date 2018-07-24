@@ -2,7 +2,7 @@
     "name": "LutronPico",
     "version": "1.0",
     "slug": "lutron_pico",
-    "description": "Add on to execute events when a pico remote from lutron caseta is pressed.",
+    "description": "Add on to fire events when a pico remote button is pressed (Lutron Caseta Wireless).",
     "startup": "before",
     "boot": "auto",
     "homeassistant_api": true,
