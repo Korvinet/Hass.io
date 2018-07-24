@@ -4,15 +4,18 @@
     "slug": "lutron_pico",
     "description": "Add on to execute events when a pico remote from lutron caseta is pressed.",
     "startup": "before",
-    "boot": "auto",    
-    "hassio_api": true,
+    "boot": "auto",
     "homeassistant_api": true,
     "host_network": true,
     "options": {
+        "username": "lutron",
+        "password": "integration",
         "host": "192.168.1.1",
         "port": 23
     },
     "schema": {
+        "username": "str",
+        "password": "str",
         "host": "str",
         "port": "int"
     }

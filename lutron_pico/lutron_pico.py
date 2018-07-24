@@ -4,15 +4,18 @@ import requests
 import argparse
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--user", type=str)
+parser.add_argument("--pwd", type=str)
 parser.add_argument("--host", type=str)
 parser.add_argument("--port", type=int)
+parser.add_argument("--apipwd", type=str)
 
 args = parser.parse_args()
 
 print('starting monitor...')
 connection = telnetlib.Telnet(args.host, args.port)
-user = "lutron\r\n"
-password = "integration\r\n"
+user = args.user + "\r\n"
+password = args.pwd + "\r\n"
 connection.read_until(b"login:", 120)
 connection.write(user.encode('ascii'))
 
@@ -31,7 +34,7 @@ while True:
             if len(array) >= 4 and array[0] == "~DEVICE" and array[3] == '3':
                 try:
                     print('received:' + array[1] + '  -   ' + array[2])
-                    r = requests.post("http://hassio/homeassistant/api/events/lutron_button_pressed?api_password=Chopan88", json={'device_id': int(array[1].strip()), 'button_id': int(array[2].strip())})
+                    r = requests.post("http://hassio/homeassistant/api/events/lutron_button_pressed?api_password=" + args.apipwd, json={'device_id': int(array[1].strip()), 'button_id': int(array[2].strip())})
                     print(r.status_code, r.reason)
                     break
                 except:
