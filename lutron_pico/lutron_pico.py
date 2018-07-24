@@ -35,10 +35,10 @@ while True:
                 try:
                     device_id=int(array[1].strip())
                     button_id=int(array[2].strip())
-                    headers={"x-ha-access": args.apipwd}
-                    body="{\"device_id\": " + device_id + ", \"button_id\": " + button_id + " }"
-                    #postData={"device_id":int(array[1].strip()),"button_id":int(array[2].strip())}
-                    r = requests.post("http://hassio/homeassistant/api/events/lutron_button_pressed", headers=headers, data=body)
+                    headers={"x-ha-access": str(args.apipwd), "Content-Type": "application/json"}
+                    #body="{\"device_id\": " + device_id + ", \"button_id\": " + button_id + " }"
+                    postData={"device_id":device_id,"button_id":button_id}
+                    r = requests.post("http://hassio/homeassistant/api/events/lutron_button_pressed", headers=headers, json=postData)
                     print(r.status_code, r.reason)
                     break
                 except:
