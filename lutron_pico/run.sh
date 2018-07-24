@@ -1,5 +1,4 @@
 echo 'Configuring plugin...'
-python3 -m pip install requests
 CONFIG_PATH=/data/options.json
 HOST="$(jq --raw-output '.host' $CONFIG_PATH)"
 echo "Host: $HOST"
