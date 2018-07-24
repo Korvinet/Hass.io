@@ -1,0 +1,19 @@
+{
+    "name": "Testing",
+    "version": "1.0",
+    "slug": "testing",
+    "description": "Addon to test.",
+    "startup": "before",
+    "boot": "auto",
+    "options": {
+        "host": "192.168.1.1:8123"
+    },
+    "schema": {
+        "host": "str",
+        "subdomain": "str?",
+        "authtoken": "str?"
+    },
+    "ports": {
+      "8000/tcp": 8000
+    }
+}
