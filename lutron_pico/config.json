@@ -6,7 +6,6 @@
     "startup": "before",
     "boot": "auto",
     "homeassistant_api": true,
-    "host_network": true,
     "options": {
         "username": "lutron",
         "password": "integration",
