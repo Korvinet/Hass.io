@@ -1,4 +1,4 @@
-echo 'Build version: 1.0.15'
+echo 'Build version: 1.0.16'
 echo 'Configuring plugin...'
 CONFIG_PATH=/data/options.json
 HOST="$(jq --raw-output '.host' $CONFIG_PATH)"
@@ -11,5 +11,5 @@ PWD="$(jq --raw-output '.password' $CONFIG_PATH)"
 echo "Password: $PWD"
 echo "API password: $HASSIO_TOKEN"
 echo 'Starting service...'
-curl -X GET -H "x-ha-access: $HASSIO_TOKEN" -H "Content-Type: application/json" http://192.168.2.75:8123/api/
+curl -X GET -H "x-ha-access: $HASSIO_TOKEN" -H "Content-Type: application/json" http://hassio/homeassistant/api/
 python3 /lutron_pico.py --host $HOST --port $PORT --user $USER --pwd $PWD --apipwd $HASSIO_TOKEN
