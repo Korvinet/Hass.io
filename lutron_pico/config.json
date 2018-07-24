@@ -8,9 +8,6 @@
     "hassio_api": true,
     "homeassistant_api": true,
     "host_network": true,
-    "ports": {
-        "23/tcp": 23
-    },
     "options": {},
     "schema": {}
   }

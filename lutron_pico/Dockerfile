@@ -4,8 +4,6 @@ FROM $BUILD_FROM
 RUN apk add --no-cache python3
 RUN apk add --no-cache jq
 
-WORKDIR /data
-
 ENV LANG C.UTF-8
 
 # Copy data for add-on
