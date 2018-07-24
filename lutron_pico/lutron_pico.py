@@ -33,11 +33,12 @@ while True:
             array = l.strip().split(',')
             if len(array) >= 4 and array[0] == "~DEVICE" and array[3] == '3':
                 try:
-                    print('received:' + array[1] + '  -  ' + array[2])
-                    #headers={"x-ha-access": args.apipwd}
-                    postData={"device_id":int(array[1].strip()),"button_id":int(array[2].strip())}
-                    url = "http://hassio/homeassistant/api/events/lutron_button_pressed?api_password=" + args.apipwd
-                    r = requests.post(url, json=postData)
+                    device_id=int(array[1].strip())
+                    button_id=int(array[2].strip())
+                    headers={"x-ha-access": args.apipwd}
+                    body="{\"device_id\": " + device_id + ", \"button_id\": " + button_id + " }"
+                    #postData={"device_id":int(array[1].strip()),"button_id":int(array[2].strip())}
+                    r = requests.post("http://hassio/homeassistant/api/events/lutron_button_pressed", headers=headers, data=body)
                     print(r.status_code, r.reason)
                     break
                 except:
