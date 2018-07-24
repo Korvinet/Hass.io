@@ -5,6 +5,7 @@
     "description": "Addon to run NgRok and tunnel hass.io over public http domain",
     "startup": "before",
     "boot": "auto",
+    "host_network": true,
     "options": {
         "host": "192.168.1.1:8123"
     },
