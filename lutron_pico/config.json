@@ -5,6 +5,7 @@
     "description": "Add on to fire events when a pico remote button is pressed (Lutron Caseta Wireless).",
     "startup": "before",
     "boot": "auto",
+    "hassio_api": true,
     "homeassistant_api": true,
     "options": {
         "username": "lutron",

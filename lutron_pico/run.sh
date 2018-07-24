@@ -1,4 +1,4 @@
-echo 'Build version: 1.0.2'
+echo 'Build version: 1.0.3'
 echo 'Configuring plugin...'
 CONFIG_PATH=/data/options.json
 HOST="$(jq --raw-output '.host' $CONFIG_PATH)"
