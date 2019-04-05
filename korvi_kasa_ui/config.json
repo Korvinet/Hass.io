@@ -1,6 +1,6 @@
 {
     "name": "Korvi Kasa UI",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "slug": "korvi_kasa_ui",
     "description": "Korvi Kasa User interface",
     "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
