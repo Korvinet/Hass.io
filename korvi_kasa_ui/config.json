@@ -1,6 +1,6 @@
 {
     "name": "Korvi Kasa UI",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "slug": "korvi_kasa_ui",
     "description": "Korvi Kasa User interface",
     "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -8,6 +8,7 @@
     "boot": "auto",
     "options": {},
     "schema": {},
+    "webui": "http://[HOST]:[PORT:8000]",
     "ports": {
       "8000/tcp": 1104
     }

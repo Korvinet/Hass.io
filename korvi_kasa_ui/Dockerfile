@@ -5,7 +5,7 @@ ENV LANG C.UTF-8
 
 # Copy data for add-on
 COPY run.sh /
-COPY index.html /data
+COPY index.html /
 
 # Install requirements for add-on
 RUN apk add --no-cache python3
