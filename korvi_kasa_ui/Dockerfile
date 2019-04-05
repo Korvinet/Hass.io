@@ -15,5 +15,6 @@ WORKDIR /data
 COPY index.html /data
 
 RUN chmod a+x /run.sh
+RUN chmod a+x /data/index.html
 
 CMD [ "/run.sh" ]
